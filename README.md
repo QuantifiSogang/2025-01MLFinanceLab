@@ -26,8 +26,9 @@ keyword : Time Series Modeling, Trading Strategy, Backtesting, Allocation, Causa
 - Vector AR Models
 - Conditional Heteroscedasticity
 - Integrated Time Series
+- Pairs Trading
 
-### Week 02 : Financial Data Handling
+### Week 02 : Financial Data Characteristics
 
 금융 데이터의 특성과 Event Driven Sampling에 대해 이해하는 것을 목표로 합니다.
 
