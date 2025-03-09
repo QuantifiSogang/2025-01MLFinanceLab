@@ -120,5 +120,6 @@ Event Driven 전략에 대해 심층적으로 이해하고 이들의 잔존기�
 Agent LLM모형에 대해 이해하고 다루는 방법을 배웁니다. 
 
 - Handling Alternative Financial Data
+- Agent Modeling
 
 ### Week 13~14 : Projects
