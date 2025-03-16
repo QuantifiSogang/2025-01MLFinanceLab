@@ -1,4 +1,0 @@
-## Distance Metrics
-
-### Motivation
-
