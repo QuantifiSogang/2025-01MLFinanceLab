@@ -16,19 +16,30 @@
 - Cost Average Portfolio Simulation
 - 거래비용(Trading Costs), 회전율(Turnover), 슬리피지(Slippage), 유동성비용(Liquidity Costs)
 
-### 3. Portfolio optimization
+### 3. Backtest Statistics
+
+- Excess Return
+- Correlation with Benchmark
+- Sharpe Ratio / Sortino Ratio
+- Compound Annual Growth Rate (CAGR)
+- Maximum Drawdown
+- Underwater Time
+- Portfolio Turnover
+- Tracking Error
+- Accuracy / Recall / Precision
+
+### 4. Rebalancing
+
+- Monthly / weekly Rebalanced Simulation
+- Betting size
+
+### 5. Portfolio optimization
 
 - Markowitz Portfolio
 - Black Litterman Portfolio
 - Risk Parity
 
-### 4. Rebalancing
-
-- Monthly / weekly Rebalanced Simulation
-- weighted portfolio with monthly rebalancing
-- Betting size
-
-### 5. Constraints (Buffer Rules)
+### 6. Constraints (Buffer Rules)
 
 - Market Capitalization Constraint
 - Average Volume Cap
