@@ -16,7 +16,15 @@
 - Cost Average Portfolio Simulation
 - 거래비용(Trading Costs), 회전율(Turnover), 슬리피지(Slippage), 유동성비용(Liquidity Costs)
 
-### 3. Backtest Statistics
+### 3. Portfolio Construction
+
+- Equal Weighted Portfolio
+- Price Weighted Portfolio
+- Market Capital Weighted Portfolio
+- Fundamental Weighted Portfolio
+- Alternative Weighted Portfolio
+
+### 4. Backtest Statistics
 
 - Excess Return
 - Correlation with Benchmark
@@ -28,16 +36,12 @@
 - Tracking Error
 - Accuracy / Recall / Precision
 
-### 4. Rebalancing
-
-- Monthly / weekly Rebalanced Simulation
-- Betting size
-
-### 5. Portfolio optimization
+### 5. Portfolio Optimization
 
 - Markowitz Portfolio
 - Black Litterman Portfolio
 - Risk Parity
+- Monthly / weekly Rebalanced Simulation
 
 ### 6. Constraints (Buffer Rules)
 
