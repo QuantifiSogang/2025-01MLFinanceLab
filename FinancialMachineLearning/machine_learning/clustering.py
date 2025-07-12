@@ -134,8 +134,12 @@ def clusterKMeansTop(
             return corrNew, clstrsNew, silhNew
 
 def nested_clustered_optimization(cov : np.array, mu = None, maxNumClusters = None) :
+    if maxNumClusters == None : maxNumClusters = 10
     cov = pd.DataFrame(cov)
-    if mu is not None : mu = pd.Series(mu[:, 0])
+    if mu is not None:
+        if isinstance(mu, pd.DataFrame):
+            mu = mu.iloc[:, 0]
+        mu = pd.Series(mu)
     corr1 = covariance_to_correlation(cov)
     corr1, clusters, _ = clusterKMeansBase(corr1, maxNumClusters, n_init = 10)
     wIntra = pd.DataFrame(0, index = cov.index, columns = clusters.keys())

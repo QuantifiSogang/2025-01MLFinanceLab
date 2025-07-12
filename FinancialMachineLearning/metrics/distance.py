@@ -59,12 +59,13 @@ class DistanceDataFrame(pd.DataFrame):
         return i_xy
 
     def corr_based_distance(self):
-        n = len(self.columns)
-        dist = np.zeros((n, n))
-        for i in range(n):
-            for j in range(n):
-                dist[i, j] = DistanceDataFrame._corr_dist(self.iloc[:, i], self.iloc[:, j])
-        dist = pd.DataFrame(dist, columns=self.columns, index=self.columns)
+        # n = len(self.columns)
+        # dist = np.zeros((n, n))
+        # for i in range(n):
+        #     for j in range(n):
+        #         dist[i, j] = DistanceDataFrame._corr_dist(self.iloc[:, i], self.iloc[:, j])
+        # dist = pd.DataFrame(dist, columns=self.columns, index=self.columns)
+        dist = np.sqrt(0.5 * (1-self.corr()))
         return dist
 
     def jensen_shannon_divergence(self):
