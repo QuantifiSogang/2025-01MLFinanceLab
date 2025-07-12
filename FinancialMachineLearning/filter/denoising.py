@@ -5,6 +5,7 @@ from scipy.optimize import minimize
 from scipy.linalg import block_diag
 from sklearn.covariance import LedoitWolf
 from FinancialMachineLearning.utils.stats import *
+from FinancialMachineLearning.machine_learning.clustering import getPCA
 
 class Denoise:
     def __init__(self, eVal, eVec, nFacts):
@@ -58,3 +59,19 @@ def signal_detoning(corr, eigenvalues, eigenvectors, market_component = 1):
     corr = corr - corr_mark
     corr = covariance_to_correlation(corr)
     return corr
+
+def denoise_covariance(cov0, q, b_width, shrink = 'constant_residual_eigenvalue', alpha = 0) :
+    corr0 = covariance_to_correlation(cov0)
+    eVal0, eVec0 = getPCA(corr0)
+    eMax0, var0 = find_max_eval(np.diag(eVal0), q, b_width)
+    nFacts0 = eVal0.shape[0] - np.diag(eVal0)[::-1].searchsorted(eMax0)
+
+    if shrink == 'constant_residual_eigenvalue':
+        corr1 = denoise_constant_residual_eigenvalue(eVal0, eVec0, nFacts0)
+    elif shrink == 'target_shrinkage':
+        corr1 = denoise_target_shrinkage(eVal0, eVec0, nFacts0, alpha = alpha)
+    else :
+        raise ValueError('shrinkage method not supported. only available: constant_residual_eigenvalue, target_shrinkage')
+
+    cov1 = correlation_to_covariance(corr1, np.diag(cov0) ** 0.5)
+    return cov1
